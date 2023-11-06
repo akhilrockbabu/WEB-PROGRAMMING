@@ -34,6 +34,7 @@ color:green;
 </style>
 <body>
 	<h1 align="center">MAR ATHNASIUS COLLEGE OF ENGINEERING</h1><br>
+	<h1 align="center">SESSIONAL EXAM 1</h1><br>
 	<form method="POST" action="" align="center">
 		<table align="center" border="1">
 			<tr>
@@ -61,14 +62,14 @@ if(isset($_POST['next']))
 		if($l["id"]==$_POST['i'] && $l['name']==strtolower($_POST['n']))
 		{
 			?>
-			<h3 align="center">NAME :<?php echo strtoupper($_POST['n']);?></h1>
-			<h3 align="center">ROLL NO:<?php echo $_POST['i'];?></h1>
+			<h3 align="center">NAME :<?php echo strtoupper($_POST['n']);?></h3>
+			<h3 align="center">ROLL NO:<?php echo $_POST['i'];?></h3>
 			<table align="center" border="1">
 			<tr>
 			<td>SUBJECT</td>
 			<td>MARKS</td>
 			<td>PASS/FAIL</td>
-			<tr>
+			</tr>
 			<?php
 			foreach($l as $key=>$value)
 			{
