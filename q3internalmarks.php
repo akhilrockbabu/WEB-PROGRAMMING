@@ -53,23 +53,71 @@ color:green;
 <?php
 if(isset($_POST['next']))
 {
+	$total=50;
+	$fail=0;
+	$totalmarks=0;
 	foreach($list as $l)
 	{
 		if($l["id"]==$_POST['i'] && $l['name']==$_POST['n'])
 		{
 			?>
+			<h3 align="center">NAME :<?php echo $_POST['n'];?></h1>
+			<h3 align="center">ROLL NO:<?php echo $_POST['i'];?></h1>
 			<table align="center" border="1">
+			<tr>
+			<td>SUBJECT</td>
+			<td>MARKS</td>
+			<td>PASS/FAIL</td>
+			<tr>
 			<?php
 			foreach($l as $key=>$value)
 			{
+				if($key!="name" && $key!="id")
+				{
+				$totalmarks=$totalmarks+$value;
 				?>
 					<tr>
 						<td><?php echo $key;?></td>
 						<td><?php echo $value;?></td>
+						<?php
+						if($value>=$total*0.5)
+						{
+						?>
+						<td>PASS</td>
+						<?php
+						}
+						else
+						{
+						?>
+						<td>FAIL</td>
+						<?php
+						$fail=1;
+						}
+						?>
+						
 					</tr>
 				<?php
+				}
 
 			}?>
+			<tr>
+			<td>TOTAL</td>
+			<td><?php echo $totalmarks;?></td>
+			<?php
+			if($fail==1)
+			{
+			?>
+			<td>FAIL</td>
+			<?php
+			}
+			else
+			{
+			?>
+			<td>PASS</td>
+			<?php
+			}
+			?>
+			</tr>
 			</table>
 			<?php
 		}
@@ -80,4 +128,3 @@ if(isset($_POST['next']))
 </body>
 </head>
 </html>
-
