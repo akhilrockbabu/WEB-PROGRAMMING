@@ -25,8 +25,8 @@ font-family:sans-serif;
 }
 a{
 color:hotpink;
-/* padding:10px;
-display:inline-block;*/
+padding:10px;
+display:inline-block;
 }
 a:hover {
 color:green;
@@ -44,7 +44,7 @@ color:green;
 				<td><input type="text" name="n" placeholder="enter the name"></td>
 			</tr>
 			<tr>
-				<td>ID</td>
+				<td>ROLLNO</td>
 				<td><input type="number" name="i" placeholder="enter the ID"></td>
 			</tr>
 		</table><br><br>
@@ -58,10 +58,10 @@ if(isset($_POST['next']))
 	$totalmarks=0;
 	foreach($list as $l)
 	{
-		if($l["id"]==$_POST['i'] && $l['name']==$_POST['n'])
+		if($l["id"]==$_POST['i'] && $l['name']==strtolower($_POST['n']))
 		{
 			?>
-			<h3 align="center">NAME :<?php echo $_POST['n'];?></h1>
+			<h3 align="center">NAME :<?php echo strtoupper($_POST['n']);?></h1>
 			<h3 align="center">ROLL NO:<?php echo $_POST['i'];?></h1>
 			<table align="center" border="1">
 			<tr>
