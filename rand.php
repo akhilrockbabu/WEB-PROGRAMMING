@@ -1,8 +1,8 @@
 <html>
 <head>
 <form method="post" action="">
-First number:<input type="text" name="n1"><br>
-Second number:<input type="text" name="n2"><br>
+First number:<input type="text" name="n1"><br><br>
+Second number:<input type="text" name="n2"><br><br>
 <input type="submit" value="submit" name="submit">
 </body>
 </html>
