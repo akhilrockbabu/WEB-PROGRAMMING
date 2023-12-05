@@ -55,7 +55,8 @@ else
 }
 $con->close();
 ?>
-<form action="productdetails.php" method="post">
+
+<form action="program_9.php" method="post">
 <br>
 <input type="submit" value="show details">
 </form>
