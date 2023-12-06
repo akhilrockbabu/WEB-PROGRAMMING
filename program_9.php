@@ -20,6 +20,7 @@ if($r->num_rows>0)
 	<td>UNIT PRICE</td>
 	<td>MANUFACTORING DATE</td>
 	<td>EXPIRY DATE</td>
+	<td>MANUFACTURER NAME</td>
 	</tr>
 	<?php
 	while($row=$r->fetch_assoc())
@@ -30,6 +31,7 @@ if($r->num_rows>0)
 		$unitp=$row['unitp'];
 		$manu=$row['manu'];
 		$exp=$row['exp'];
+		$man=$row['manufacturer']
 		?>
 		<tr>
 		<td><?php echo $id;?></td>
@@ -38,6 +40,23 @@ if($r->num_rows>0)
 		<td><?php echo $unitp;?></td>
 		<td><?php echo $manu;?></td>
 		<td><?php echo $exp;?></td>
+		<td><?php
+		if($man==NULL)
+		{
+			?>
+			<form method="POST" action="program10_2.php">
+			<input type="text" placeholder="enter the manufacturer name" name="man">
+			<input type="submit" name="submit" value="UPDATE">
+			<input type="hidden" name="id" value="<?php echo $row['id']?>">
+			</form>
+		<?php
+		}
+		else
+		{
+			echo $man;
+		}
+		?>
+		</td>		
 		</tr>
 		<?php
 	}
